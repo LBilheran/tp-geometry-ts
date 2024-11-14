@@ -2,6 +2,7 @@ import "mocha";
 import { expect } from "chai";
 import Point from "../src/Point";
 import LineString from "../src/LineString";
+import Envelope from "../src/Envelope";
 
 describe("test LineString", () => {
     const p1 = new Point([3.0,4.0]);
@@ -40,5 +41,9 @@ describe("test LineString", () => {
         expect(clone.getPointN(0)).to.deep.equal(points.getPointN(0));
         clone.translate(1.0,1.0);
         expect(clone.getPointN(0)).to.not.deep.equal(points.getPointN(0));
+    });
+
+    it("test getEnvelope", () => {
+        expect(points.getEnvelope()).to.deep.equal(new Envelope([3.0,5.0],[4.0,6.0]));
     });
 });

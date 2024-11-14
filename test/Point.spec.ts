@@ -1,6 +1,7 @@
 import "mocha";
 import { expect } from "chai";
 import Point from "../src/Point";
+import Envelope from "../src/Envelope";
 
 describe("test Point", () => {
     const p1 = new Point();
@@ -39,5 +40,9 @@ describe("test Point", () => {
         expect(clone.getCoordinate()).to.deep.equal(p2.getCoordinate());
         clone.translate(1.0,1.0);
         expect(clone.getCoordinate()).to.not.deep.equal(p2.getCoordinate());
+    });
+
+    it("test getEnvelope", () => {
+        expect(p2.getEnvelope()).to.deep.equal(new Envelope([4.0,5.0],[4.0,5.0]));
     });
 });
