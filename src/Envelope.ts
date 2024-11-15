@@ -13,7 +13,7 @@ export default class Envelope {
         return (this.bottomLeft.length===0)&&(this.topRight.length===0) ? true : false;
     }
 
-    toSting(): string {
+    toString(): string {
         return "Envelope: (" + this.bottomLeft + " ; " + this.topRight + ")" ;
     }
 

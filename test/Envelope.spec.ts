@@ -26,7 +26,7 @@ describe("test Envelope", () => {
     });
 
     it("test toString", () => {
-        expect(env2.toSting()).to.equal("Envelope: (1,3 ; 4,5)");
+        expect(env2.toString()).to.equal("Envelope: (1,3 ; 4,5)");
     });
 
 });

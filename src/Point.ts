@@ -1,13 +1,12 @@
+import AbstractGeometry from "./AbstractGeometry";
 import Coordinate from "./Coordinate";
-import Envelope from "./Envelope";
-import Geometry from "./Geometry";
-import EnvelopeBuilder from "./EnvelopeBuilder";
 import GeometryVisitor from "./GeometryVisitor";
 
-export default class Point implements Geometry {
+export default class Point extends AbstractGeometry {
   private coordinate?: Coordinate;
 
   constructor(coordinate?: Coordinate) {
+    super();
     this.coordinate = coordinate ? coordinate : [] ;
   }
 
@@ -42,12 +41,6 @@ export default class Point implements Geometry {
     if (!this.isEmpty()) {
       return new Point([this.x(),this.y()]);
     }
-  }
-
-  getEnvelope(): Envelope {
-    const envB = new EnvelopeBuilder();
-    envB.insert(this.coordinate);
-    return envB.build();
   }
 
   accept(visitor: GeometryVisitor): void {
