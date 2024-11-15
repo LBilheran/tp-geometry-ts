@@ -4,9 +4,10 @@ import Envelope from "../src/Envelope";
 import EnvelopeBuilder from "../src/EnvelopeBuilder";
 
 describe("test EnvelopeBuilder", () => {
-    const envB = new EnvelopeBuilder();
 
     it("test build", () => {
+        const envB = new EnvelopeBuilder();
+        
         envB.insert([1.0,2.0]);
         expect(envB.build()).to.deep.equal(new Envelope([1.0,2.0],[1.0,2.0]));
         envB.insert([5.0,6.0]);

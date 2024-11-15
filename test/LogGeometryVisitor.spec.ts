@@ -6,16 +6,17 @@ import LogGeometryVisitor from "../src/LogGeometryVisitor";
 import GeometryCollection from "../src/GeometryCollection";
 
 describe("test LogGeometryVisitor", () => {
-    const visitor = new LogGeometryVisitor();
-    const p1 = new Point([3.0,4.0]);
-    const p2 = new Point([2.0,5.0]);
-    const points = new LineString([p1,p2]);
-    const geoms = new GeometryCollection([p1,points]);
-    const pEmpty = new Point();
-    const pointsEmpty = new LineString();
-    const geomsEmpty = new GeometryCollection();
-
+    
     it("test accept", () => {
+        const visitor = new LogGeometryVisitor();
+        const p1 = new Point([3.0,4.0]);
+        const p2 = new Point([2.0,5.0]);
+        const points = new LineString([p1,p2]);
+        const geoms = new GeometryCollection([p1,points]);
+        const pEmpty = new Point();
+        const pointsEmpty = new LineString();
+        const geomsEmpty = new GeometryCollection();
+
         expect(pEmpty.accept(visitor)).to.equal(console.log("Je suis un point vide."));
         expect(p1.accept(visitor)).to.equal(console.log("Je suis un point avec x=3 et y=4."));
         expect(pointsEmpty.accept(visitor)).to.equal(console.log("Je suis une polyligne vide."));

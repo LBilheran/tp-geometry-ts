@@ -34,13 +34,13 @@ export default class Point extends AbstractGeometry {
     if (!this.isEmpty()) {
       this.coordinate[0]+=dx;
       this.coordinate[1]+=dy;
-    }
+    } 
   }
 
   clone(): Point {
     if (!this.isEmpty()) {
       return new Point([this.x(),this.y()]);
-    }
+    } 
   }
 
   accept(visitor: GeometryVisitor): void {
