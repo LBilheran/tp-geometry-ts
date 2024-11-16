@@ -1,5 +1,4 @@
 import AbstractGeometry from "./AbstractGeometry";
-import Envelope from "./Envelope";
 import Geometry from "./Geometry";
 import GeometryVisitor from "./GeometryVisitor";
 
@@ -45,7 +44,7 @@ export default class GeometryCollection extends AbstractGeometry {
         }
     }
 
-    accept(visitor: GeometryVisitor): void {
-        visitor.visitGeometryCollection(this);
+    accept<T>(visitor: GeometryVisitor<T>): T {
+        return visitor.visitGeometryCollection(this);
     }
 }

@@ -5,7 +5,7 @@ import Point from "./Point";
 import LineString from "./LineString";
 import GeometryCollection from "./GeometryCollection";
 
-export default class EnvelopeBuilder implements GeometryVisitor {
+export default class EnvelopeBuilder implements GeometryVisitor<void> {
     private xmin: number;
     private ymin: number;
     private xmax: number;
