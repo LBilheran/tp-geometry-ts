@@ -34,5 +34,4 @@ describe("test Envelope", () => {
         const env2 = new Envelope([1.0,3.0],[4.0,5.0]);
         expect(env2.toString()).to.equal("Envelope: (1,3 ; 4,5)");
     });
-
 });
